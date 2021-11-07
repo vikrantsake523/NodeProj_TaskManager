@@ -6,13 +6,9 @@ const dotenv = require('dotenv').config()
 
 //middleware
 
-
+app.use(express.static('./public'))
 //if we dont use it, there will not be data in req.body?
 app.use(express.json())
-
-app.get('/hello', (req, res) => {
-    res.send('Task Manager App')
-})
 
 
 app.use('/api/v1/tasks', tasks)
